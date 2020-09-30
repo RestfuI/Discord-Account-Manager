@@ -62,7 +62,7 @@ namespace Discord_Account_Manager
              * Check if the user is signed into a Discord Account.
              */
 
-            if (Directory.GetFiles(Program.currentLocalDatabase).Length <= 5)
+            if (Directory.GetFiles(Program.discordLocalStorage + "\\leveldb").Length <= 5)
             {
                 MessageBox.Show("You're not logged in to your Discord account. Please login and try again!");
 
@@ -124,8 +124,12 @@ namespace Discord_Account_Manager
             string accountNamePath = Program.usersDirectory + "\\" + accountNameField.Text;
 
             Directory.CreateDirectory(accountNamePath);
+            Directory.CreateDirectory(accountNamePath + "\\Session Storage");
+            Directory.CreateDirectory(accountNamePath + "\\Local Storage");
+            Directory.CreateDirectory(accountNamePath + "\\Local Storage\\leveldb");
 
-            utils.copyFiles(Program.currentLocalDatabase, accountNamePath);
+            utils.copyFiles(Program.discordData + "\\Session Storage", accountNamePath + "\\Session Storage");
+            utils.copyFiles(Program.discordData + "\\Local Storage\\leveldb", accountNamePath + "\\Local Storage\\leveldb");
 
             accountListBox.Items.Add(accountNameField.Text);
         }
@@ -174,9 +178,18 @@ namespace Discord_Account_Manager
 
             await Task.Delay(5000);
 
-            if (Directory.Exists(Program.currentLocalDatabase)) Directory.Delete(Program.currentLocalDatabase, true);
+            if (Directory.Exists(Program.discordLocalStorage)) Directory.Delete(Program.discordLocalStorage, true);
+            if (Directory.Exists(Program.discordSessionStorage)) Directory.Delete(Program.discordSessionStorage, true);
 
-            utils.copyFiles(Program.usersDirectory + "\\" + accountListBox.SelectedItem, Program.currentLocalDatabase);
+            string accountPath = Program.usersDirectory + "\\" + accountListBox.SelectedItem;
+
+            Directory.CreateDirectory(Program.discordLocalStorage);
+            Directory.CreateDirectory(Program.discordLocalStorage + "\\leveldb");
+            Directory.CreateDirectory(Program.discordSessionStorage);
+
+            utils.copyFiles(accountPath + "\\Local Storage\\leveldb", Program.discordLocalStorage + "\\leveldb");
+            utils.copyFiles(accountPath + "\\Session Storage", Program.discordSessionStorage);
+
 
             Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Discord\\Update.exe", "--processStart Discord.exe");
         }

@@ -19,5 +19,13 @@ namespace Discord_Account_Manager.Classes.Utilities
                 File.Copy(file, targetDir + "\\" + name);
             }
         }
+
+        /**
+         * TODO: Write Method.
+         */
+        public void copyDirectory(bool recursive)
+        {
+            //...
+        }
     }
 }

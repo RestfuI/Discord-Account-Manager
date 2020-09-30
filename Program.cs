@@ -8,7 +8,10 @@ namespace Discord_Account_Manager
     static class Program
     {
         public static string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\DAM (Discord Account Manager)";
-        public static string currentLocalDatabase = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Local Storage\\leveldb";
+        public static string discordData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord";
+
+        public static string discordSessionStorage = discordData + "\\Session Storage";
+        public static string discordLocalStorage = discordData + "\\Local Storage";
         public static string usersDirectory = baseDirectory + "\\users";
         public static string configDirectory = baseDirectory + "\\config";
         public static string configFile = configDirectory + "\\main.json";

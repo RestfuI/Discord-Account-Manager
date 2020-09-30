@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
@@ -106,6 +107,15 @@ namespace Discord_Account_Manager
             Login login = new Login(this);
             login.Show();
             this.Hide();
+        }
+
+        /**
+         * githubLinkLabel Click event
+         */
+
+        private void githubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/RestfuI/Discord-Account-Manager/");
         }
     }
 }

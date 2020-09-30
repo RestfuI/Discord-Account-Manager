@@ -42,6 +42,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,6 +224,23 @@
             this.label1.Text = "v1.0.0-rc.1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // githubLinkLabel
+            // 
+            this.githubLinkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.githubLinkLabel.AutoSize = true;
+            this.githubLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.githubLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.githubLinkLabel.Font = new System.Drawing.Font("Whitney Light", 9.25F, System.Drawing.FontStyle.Bold);
+            this.githubLinkLabel.LinkColor = System.Drawing.Color.White;
+            this.githubLinkLabel.Location = new System.Drawing.Point(12, 528);
+            this.githubLinkLabel.Name = "githubLinkLabel";
+            this.githubLinkLabel.Size = new System.Drawing.Size(110, 15);
+            this.githubLinkLabel.TabIndex = 16;
+            this.githubLinkLabel.TabStop = true;
+            this.githubLinkLabel.Text = "Github Repository";
+            this.githubLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.githubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLinkLabel_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +248,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(972, 552);
+            this.Controls.Add(this.githubLinkLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -256,5 +275,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton loginButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel githubLinkLabel;
     }
 }

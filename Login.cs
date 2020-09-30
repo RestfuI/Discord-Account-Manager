@@ -6,6 +6,7 @@ using bCrypt = BCrypt.Net.BCrypt;
 using Newtonsoft.Json;
 using Discord_Account_Manager.Classes.Authentication;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Discord_Account_Manager
 {
@@ -116,6 +117,15 @@ namespace Discord_Account_Manager
 
                 return;
             }
+        }
+
+        /**
+         * githubLinkLabel Click event
+         */
+
+        private void githubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/RestfuI/Discord-Account-Manager/");
         }
     }
 }

@@ -43,6 +43,7 @@
             this.addAccountButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.removeAccountButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.loginButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,12 +268,30 @@
             this.loginButton.TextFont = new System.Drawing.Font("Whitney Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
+            // githubLinkLabel
+            // 
+            this.githubLinkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.githubLinkLabel.AutoSize = true;
+            this.githubLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.githubLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.githubLinkLabel.Font = new System.Drawing.Font("Whitney Light", 9.25F, System.Drawing.FontStyle.Bold);
+            this.githubLinkLabel.LinkColor = System.Drawing.Color.White;
+            this.githubLinkLabel.Location = new System.Drawing.Point(20, 400);
+            this.githubLinkLabel.Name = "githubLinkLabel";
+            this.githubLinkLabel.Size = new System.Drawing.Size(269, 15);
+            this.githubLinkLabel.TabIndex = 19;
+            this.githubLinkLabel.TabStop = true;
+            this.githubLinkLabel.Text = "Github Repository - Discord Account Manager";
+            this.githubLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.githubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLinkLabel_LinkClicked);
+            // 
             // Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(793, 424);
+            this.Controls.Add(this.githubLinkLabel);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.removeAccountButton);
             this.Controls.Add(this.addAccountButton);
@@ -307,5 +326,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton loginButton;
         private Bunifu.Framework.UI.BunifuFlatButton removeAccountButton;
         private Bunifu.Framework.UI.BunifuFlatButton addAccountButton;
+        private System.Windows.Forms.LinkLabel githubLinkLabel;
     }
 }

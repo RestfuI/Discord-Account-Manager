@@ -130,6 +130,8 @@ namespace Discord_Account_Manager
             utils.copyFiles(Program.discordData + "\\Session Storage", accountNamePath + "\\Session Storage");
             utils.copyFiles(Program.discordData + "\\Local Storage\\leveldb", accountNamePath + "\\Local Storage\\leveldb");
 
+            File.Copy(Program.discordData + "\\Cookies", accountNamePath + "\\Cookies");
+
             accountListBox.Items.Add(accountNameField.Text);
             accountNameField.ResetText();
 
@@ -181,6 +183,7 @@ namespace Discord_Account_Manager
 
             if (Directory.Exists(Program.discordLocalStorage)) Directory.Delete(Program.discordLocalStorage, true);
             if (Directory.Exists(Program.discordSessionStorage)) Directory.Delete(Program.discordSessionStorage, true);
+            if (File.Exists(Program.discordData + "\\Cookies")) File.Delete(Program.discordData + "\\Cookies");
 
             string accountPath = Program.usersDirectory + "\\" + accountListBox.SelectedItem;
 
@@ -191,6 +194,7 @@ namespace Discord_Account_Manager
             utils.copyFiles(accountPath + "\\Local Storage\\leveldb", Program.discordLocalStorage + "\\leveldb");
             utils.copyFiles(accountPath + "\\Session Storage", Program.discordSessionStorage);
 
+            File.Copy(accountPath + "\\Cookies", Program.discordData + "\\Cookies");
 
             Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Discord\\Update.exe", "--processStart Discord.exe");
         }

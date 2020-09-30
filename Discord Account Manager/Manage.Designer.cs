@@ -44,6 +44,7 @@
             this.removeAccountButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.loginButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.minLabel = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.topPanel.Controls.Add(this.minLabel);
             this.topPanel.Controls.Add(this.exitLabel);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
@@ -285,6 +287,19 @@
             this.githubLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.githubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLinkLabel_LinkClicked);
             // 
+            // minLabel
+            // 
+            this.minLabel.AutoSize = true;
+            this.minLabel.BackColor = System.Drawing.Color.Transparent;
+            this.minLabel.Font = new System.Drawing.Font("Whitney Light", 8.999999F);
+            this.minLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(146)))), ((int)(((byte)(151)))));
+            this.minLabel.Location = new System.Drawing.Point(759, 2);
+            this.minLabel.Name = "minLabel";
+            this.minLabel.Size = new System.Drawing.Size(11, 14);
+            this.minLabel.TabIndex = 17;
+            this.minLabel.Text = "-";
+            this.minLabel.Click += new System.EventHandler(this.minLabel_Click);
+            // 
             // Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,5 +342,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton removeAccountButton;
         private Bunifu.Framework.UI.BunifuFlatButton addAccountButton;
         private System.Windows.Forms.LinkLabel githubLinkLabel;
+        private System.Windows.Forms.Label minLabel;
     }
 }

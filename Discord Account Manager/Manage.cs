@@ -120,7 +120,6 @@ namespace Discord_Account_Manager
                 return;
             }
 
-
             string accountNamePath = Program.usersDirectory + "\\" + accountNameField.Text;
 
             Directory.CreateDirectory(accountNamePath);
@@ -132,6 +131,8 @@ namespace Discord_Account_Manager
             utils.copyFiles(Program.discordData + "\\Local Storage\\leveldb", accountNamePath + "\\Local Storage\\leveldb");
 
             accountListBox.Items.Add(accountNameField.Text);
+            accountNameField.ResetText();
+
         }
 
         /**
@@ -210,6 +211,15 @@ namespace Discord_Account_Manager
         private void githubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/RestfuI/Discord-Account-Manager/");
+        }
+
+        /**
+         * 'minLabel' Click event
+         */
+
+        private void minLabel_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

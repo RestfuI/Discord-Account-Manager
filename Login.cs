@@ -120,12 +120,20 @@ namespace Discord_Account_Manager
         }
 
         /**
-         * githubLinkLabel Click event
+         * 'githubLinkLabel' Click event
          */
 
         private void githubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/RestfuI/Discord-Account-Manager/");
+        }
+
+        /**
+         * 'exitLabel' Click event.
+         */
+        private void exitLabel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

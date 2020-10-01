@@ -10,4 +10,4 @@ This shows how easy it is to add your Discord Account to DAM (Discord Account Ma
 This shows how easy it is to switch accounts using DAM (Discord Account Manager)
 
 ## Support Discord
-https://discord.gg/EzFTUqF
+https://discord.gg/zcgJzJS

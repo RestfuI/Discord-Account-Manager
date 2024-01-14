@@ -11,3 +11,6 @@ This shows how easy it is to switch accounts using DAM (Discord Account Manager)
 
 ## Support Discord
 https://discord.gg/zcgJzJS
+
+## Ignore (Testing)
+This project is tested with Browserstack.
